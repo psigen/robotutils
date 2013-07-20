@@ -427,6 +427,10 @@ public abstract class DStarLite<State> {
                 }
             }
 
+            if (minS == null) {
+                return Collections.emptyList();
+            }
+            
             s = minS;
             path.addLast(s);
         }
