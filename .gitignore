@@ -4,3 +4,7 @@
 *.jar
 *.war
 *.ear
+
+# Temporary build files
+dependency-reduced-pom.xml
+target/

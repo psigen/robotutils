@@ -8,7 +8,7 @@
     <packaging>jar</packaging>
 
     <name>robotutils</name>
-    <description>Please refer to https://github.com/psigen/robotutils.</description>
+    <description>A simple Java utility library for robotics applications.</description>
     <url>https://github.com/psigen/robotutils</url>
 
     <organization>
@@ -106,6 +106,23 @@
                 <configuration>
                     <argLine>-Xmx32M</argLine>
                 </configuration>
+            </plugin>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-shade-plugin</artifactId>
+              <version>2.1</version>
+              <configuration>
+                <shadedArtifactAttached>true</shadedArtifactAttached>
+                <shadedClassifierName>jar-with-dependencies</shadedClassifierName>
+              </configuration>
+              <executions>
+                <execution>
+                  <phase>package</phase>
+                  <goals>
+                    <goal>shade</goal>
+                  </goals>
+                </execution>
+              </executions>
             </plugin>
         </plugins>
     </build>
