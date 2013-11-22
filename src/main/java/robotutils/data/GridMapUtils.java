@@ -114,8 +114,8 @@ public class GridMapUtils {
     }
 
     public static void fillImage(BufferedImage image, GridMap map) {
-        int height = Math.min(image.getHeight(), map.size(0));
-        int width = Math.min(image.getWidth(), map.size(1));
+        int width = Math.min(image.getWidth(), map.size(0));
+        int height = Math.min(image.getHeight(), map.size(1));
 
         fillImage(image, map, 0, 0, width, height);
     }
@@ -124,7 +124,7 @@ public class GridMapUtils {
         WritableRaster wr = image.getRaster();
         for (int i = y; i < height; i++) {
             for (int j = x; j < width; j++) {
-                wr.setSample(i, j, 0, map.get(i, j));
+                wr.setSample(j, i, 0, map.get(j, i));
             }
         }
     }
