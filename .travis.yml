@@ -1,1 +1,14 @@
 language: java
+before_install: "git clone -b travis `git config --get remote.origin.url` target/travis"
+script: "mvn deploy --settings target/travis/settings.xml"
+
+# blacklist
+branches:
+  except:
+    - travis
+    - gh-pages
+
+env:
+  global:  
+    - secure: "HW4lXdvIe1LhtgzC+x3y767RXoVeKDGfyWBuzFZSBqGeVRWRbR69evB3syu8kG/tA+L7YZSWPIIhNu47T5sVcWEFfOsLAJkFyVNStmhpbKLnCCol1aNXEdDDpmYjDVmFzF/X+g0yYSXF13wYHU0K36X3qjk39w8O1EfIM+uSgmQ="
+    - secure: "fP8Y5b4SXBShGv3eCEPquOiCFinwq1huUCNjHvWtu5LUwIBYkPcUzyHzzOanQeCaJpPocPnSrGq2KdjWHSU5AtqOU5489eyop1sNTdzfFObgx2iTCGeUdsOfkaqdcEZQ1d55/8Ln0Q8UoPb97qVRaBfI6jgK2p6ZGAkUvW4UWno="
