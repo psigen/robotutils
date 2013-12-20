@@ -11,3 +11,5 @@ A simple import of the pom in your IDE should get you up and running.
 
 ## License
 This project is released under the revised MIT License (see [LICENSE](LICENSE)).
+
+[![Build Status](https://travis-ci.org/psigen/robotutils.png)](https://travis-ci.org/psigen/robotutils)
